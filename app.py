@@ -17,24 +17,66 @@ explainer = shap.TreeExplainer(model)
 
 
 # =========================================================
-# 2. PAGE CONFIG
+# 2. PAGE CONFIG (SEO & METADATA)
 # =========================================================
 
 st.set_page_config(
-    page_title="Customer Churn AI",
-    page_icon="🤖",
-    layout="wide"
+    page_title="Customer Churn Prediction AI | Tushar Sharma",
+    page_icon="📊",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        "Get Help": "https://github.com/tusharsharma1452/customer-churn-ai",
+        "Report a bug": "https://github.com/tusharsharma1452/customer-churn-ai/issues",
+        "About": """
+        ### 🤖 Customer Churn Prediction & Explainable AI (SHAP)
+        **Developer:** Tushar Sharma (B.Tech Computer Science)
+        **Tech Stack:** Python, XGBoost, Scikit-learn, SHAP, Streamlit
+        **GitHub:** [tusharsharma1452/customer-churn-ai](https://github.com/tusharsharma1452/customer-churn-ai)
+        """
+    }
 )
 
 
 # =========================================================
-# 3. TITLE
+# 3. SIDEBAR (DEVELOPER & PROJECT INFO)
 # =========================================================
 
-st.title("🤖 Customer Churn Prediction")
+with st.sidebar:
+    st.header("📊 About Project")
+    st.write(
+        "End-to-End **Customer Churn AI** system powered by "
+        "**XGBoost** and **SHAP (Explainable AI)** to predict customer churn probability "
+        "and explain risk drivers in real time."
+    )
+    
+    st.divider()
+    
+    st.subheader("👨‍💻 Developer")
+    st.markdown("**Tushar Sharma**")
+    st.markdown("🔗 [GitHub Repository](https://github.com/tusharsharma1452/customer-churn-ai)")
+    st.markdown("🌐 [Live Web App](https://tushar-customer-churn.streamlit.app)")
+    
+    st.divider()
+    
+    st.subheader("🛠️ Model Performance")
+    st.markdown("- **Model:** XGBoost Classifier")
+    st.markdown("- **ROC-AUC:** 84.20%")
+    st.markdown("- **Accuracy:** 80.06%")
+    st.markdown("- **Explainability:** SHAP TreeExplainer")
+
+
+# =========================================================
+# 4. TITLE & HEADER
+# =========================================================
+
+st.title("🤖 Customer Churn Prediction & Explainable AI")
+st.caption(
+    "Developed by **Tushar Sharma** | Machine Learning & Explainable AI (SHAP) Solution"
+)
 st.write(
-    "AI/ML powered customer churn prediction and "
-    "explainable AI system"
+    "Predict whether a customer is at risk of leaving the service, calculate churn probability, "
+    "and understand the underlying feature contributions using SHAP."
 )
 
 st.divider()
